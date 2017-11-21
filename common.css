@@ -1,0 +1,366 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    border-color: #CCCCCC;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.ql-blank-font {
+    color: red;
+    font-style: normal;
+}
+
+.sfixed {
+    position: fixed;
+    top: 59px;
+}
+
+#header {
+    width: 100%;
+    height: 59px;
+    border-bottom: 1px solid #EBEBEB;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    line-height: 59px;
+    z-index: 1000;
+}
+
+#header-title {
+    height: 19px;
+    width: 660px;
+    margin: 0 auto;
+   
+}
+
+.titleDiv {
+    width: 660px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.pageTitle {
+    height: 19px;
+    line-height: 19.2px;
+    width: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 20 0 0;
+    color: #333;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.pageSubTitle {
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #b3b3b3;
+}
+
+.fabu {
+    display: inline-block;
+    position: absolute;
+    right: 74px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 19.2px;
+    height: 32px;
+    width: 102px;
+    padding: 0px 10px 0px 10px;
+}
+
+input.fileInput{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    width: 660px;
+    height: 190px;
+    background-color: red;
+    cursor: pointer;
+    opacity: 0;
+    /* display: none; */
+    /* z-index: 10000;     */
+}
+.pagephoto{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 108px;
+    width: 660px;
+    height: 190px;
+    background-color: #F7F8F9;
+    cursor: pointer;
+    z-index:0;
+    /* background-size: cover; */
+    background-size: 100% 100%;  
+    
+}
+#preview{
+    max-width: 660px;
+   height: auto;
+
+    /* display: block;
+     position: relative; */
+    /* margin: 0 auto; */ 
+    /* margin-top: 108px; */
+    /* width: 660px; */
+    /*height: 190px; */
+    /* zoom:normal; */
+    /* background-color: red; */
+    /* z-index:10;   */
+}
+
+.pagephoto:hover {}
+
+
+}
+.contain {
+    position: relative;
+    width: 660px;
+    margin: 0 auto;
+}
+#contain {
+    width: 660px;
+    margin-top: 47px;
+    margin: 0 auto;
+}
+.navBar {
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+}
+.editorWrap {
+    /* border-top:100px; */
+    /* background-color: red; */
+
+    width: 50%;
+    min-height: 600px;
+    margin: 0 auto;
+    height: auto;
+}
+#select {
+    border: 0px;
+    outline: none;
+}
+#toolbar {
+    width: 660px;
+    height: 36px;
+    border: 0px;
+    border-top: 1px solid #ECECEC;
+    line-height: 36px;
+    background-color: #FFFFFF;
+    z-index: 1000;
+}
+#toolbarContainer {
+    width: 660px;
+    height: 36px;
+}
+
+/* .ql-size{
+    display: inline-block;
+    height:36px;
+    border-right:1px solid #ECECEC; 
+} */
+.ql-image {
+    display: inline-block;
+    border-right: 1px solid #ECECEC;
+}
+
+/* .toolBar{
+    position: relative;
+    margin-top:30px;
+    margin: 0 auto;
+    width:50%;
+    height: 100%;
+    line-height: 40px;
+} */
+
+/* .ql-size{
+    vertical-align: middle;     
+  
+} */
+.ql-picker-label::before {
+    position: absolute;
+}
+/* img {
+    width: 24px;
+    height: 24px;
+} */
+.bigText {
+    font-size: 26px;
+}
+.smallText {
+    font-size: 22px;
+}
+.normalText {
+    font-size: 18px;
+}
+.undo {
+    width: 14px;
+    height: 14px;
+    margin-left: 7px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+.redo {
+    width: 14px;
+    height: 14px;
+    margin-left: 7px;
+    /* position: absolute;
+    right: 190px; */
+
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+.photo {
+    position: absolute;
+    /* right: 200px; */
+}
+.camera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    pointer-events:none;
+}
+.phototitle {
+    display: none;
+    pointer-events:none;
+}
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+
+    color: #B3B3B3;
+}
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+
+    color: #B3B3B3;
+}
+input:-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+
+    color: #B3B3B3;
+}
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+
+    color: #B3B3B3;
+}
+.inputBox {
+    /* border-left: 1px  solid #CCCCCC;
+    border-right: 1px solid #CCCCCC; */
+
+    font-weight: 500;
+    border: 0px;
+    width: 660px;
+    min-height: 60px;
+    height: auto;
+    font-size: 32px;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    /* color: #B3B3B3; */
+}
+.hr {
+    border-bottom: 1px solid #CCCCCC;
+}
+.article {
+    margin-top: 30px;
+    border: 0px;
+    width: 100%;
+    height: 500px;
+    outline: none;
+    font-size: 18px;
+}
+.view {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    color: #808080;
+    position: absolute;
+    right: 150px;
+    border: 0px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.publish {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    right: 100px;
+    border: 0px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #808080;
+}
+a:link {}
+a:visited {}
+.undo:hover {
+    color: #0066CC;
+}
+button,
+select,
+img {
+    cursor: pointer;
+}
+#editor {
+    line-height: 24px;
+    min-height: 500px;
+    border: 0px;
+    cursor: text;
+}
+.ql-editor {
+    margin: 0;
+    padding: 0;
+}
+#editor {
+    margin: 0;
+    padding: 0;
+}
+.ql-editor img {
+    width: 560px;
+    height: 280px;
+    min-height: 30px;
+    min-width: 60px;
+}
+
+/* <div class="toolbar">
+<select  name="样式" id="select">
+        <option  selected class="bigText" value="大标题">大标题</option>
+        <option class="smallText" value="小标题">小标题</option>
+        <option class="normalText" value="正文">正文</option>
+    </select>
+    <img  class="undo" title="sd" src="./img/undo1.png" alt="撤销">
+    <img  class="redo"  title="" src="./img/redo1.png" alt="重做">
+    <img  class="photo" title="" src="./img/img.png" alt="添加图片">
+    <button class="view">预览</button>
+    <button class="publish">发布</button>
+</div> */
+
+/* 
+<div class="editorWrap">
+<input  class="inputBox" type="text" value='' placeholder="请输入标题" minlength="1" maxlength="32">
+<div class="hr"></div>
+
+<div class='article'  contenteditable="true"  aria-placeholder="shjj">请输入正文...</div>
+</div> */
+<polyline class="ql-even ql-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline>

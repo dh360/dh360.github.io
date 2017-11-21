@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
+    <script src='./image.js'></script>
+    <link rel="stylesheet" href="./quill.css">
+</head>
+
+<body>
+    <div class="container" contenteditable="false">
+         
+        <div class="publish">发布</div>
+        <div class="imgDiv">
+            <img  id='coverphoto'  src="" alt="">
+        </div>
+        <div class="title"></div>
+        <div class="article">
+            <p class="hello"> </p>
+        </div>
+    </div>
+
+
+</body>
+<style>
+    .imgDiv{
+        /* position: absolute;  */
+         width:670px;
+        height:200px;
+         margin:0 auto;
+         margin-top: 30px; 
+        /* margin-top:40px; */
+    }
+    #coverphoto{
+        /* position: absolute; */
+        /* width:670px;
+        height:200px;
+        margin:0 auto; */
+        /* margin-top:40px; */
+        width:660px;
+        height:190px;
+    }
+    .ql-editor::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .ql-editor::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        height: 6px;
+        background: #626262;
+        -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+    }
+
+    .ql-editor::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    /* body html {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+    } */
+
+    .ql-syntax {
+        background-color: #F6F6F6;
+        overflow-x: scroll;
+        cursor: default;
+        font-family: Menlo, Monaco, Consolas, "Andale Mono";
+        /* font-size: 14px;
+        line-height: 24px; */
+    }
+
+    .title {
+        height: auto;
+        width: 660px;
+        margin: 0 auto;
+        cursor: default;
+    }
+h1{
+    font-size: 24px;
+}
+    .ql-editor {
+        padding: 0;
+     
+        height: auto;
+        width: 660px;
+        margin: 0 auto;  
+         margin-top: 20px;
+         margin-bottom: 20px;
+    }
+
+    img {
+        /* width:560px;
+         overflow: auto;
+         height: 200px;
+         background-color: red;
+         margin: 0 auto;
+       */
+    }
+
+    .container {
+        /* width:200px; */
+        margin:0 auto;
+        min-height: 500px;
+    }
+
+  
+    h1 {
+        /* font-size: 32px;
+        line-height: 41.6px; */
+        /* font-weight: 500; */
+        text-align: left;
+    }  
+    .ql-editor p {
+        width: 660px;
+        /* margin: 0 auto; */
+        display: block;
+        margin: 20px 0 20px 0;
+
+        
+
+        font-size: 16px;
+        line-height: 27.2px;    
+        word-spacing: 0px; */
+    }
+
+</style>
+<script>
+
+    $(document).ready(function () {
+        preview();
+    });
+</script>
+
+</html>
