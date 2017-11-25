@@ -1,0 +1,91 @@
+
+  @media screen and (min-width: 768px) {
+    .device {
+      position: absolute;
+      top: 50px;
+      left:50%;
+      margin-left:-198px;
+      display: block;
+      width: 395px;
+      height: 813px;
+    
+      font-family: "Helvetica Neue", sans-serif;
+      background-image: url("./img/device-sprite.png");
+      background-repeat: no-repeat;
+      background-position: -395px 0;
+      background-size: 300%;
+     
+      /* -webkit-transition: background-image .1s linear;
+           -o-transition: background-image .1s linear;
+              transition: background-image .1s linear; */
+             
+    }
+    .device-content::-webkit-scrollbar {
+      width: 0px;
+  }
+  
+  .device-content::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      height: 6px;
+      background: #626262;
+      -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+  }
+  
+  .device-content::-webkit-scrollbar {
+      height: 6px;
+  }
+    .device .device-content {
+      position: absolute;
+      top: 115px;
+      left: 35px;
+      width: 325px;
+      height: 573px;
+      overflow: hidden;
+      font-size: .85rem;
+      line-height: 1.05rem;
+      background: #eee;
+      overflow-y: scroll;
+    }
+  
+    .device iframe {
+      border: 0;
+    }
+    .container{
+    
+      margin-right:5px;
+      margin-left: 5px;
+    }
+    #coverphoto{
+      margin-top:5px;
+      height: auto !important;  
+      max-width: 100% !important;  
+      margin-left:0px;
+      margin-right:0px;
+    }
+    p img{
+      display: block;
+      width:100%;
+      height: auto;
+      overflow-x: scroll;
+    }
+    h1{
+      font-weight: 500;
+      display: block;
+      width:100%;
+      font-size: 22px;
+      line-height: 1em;
+    }
+    p{
+      text-indent: 2em;
+      font-size:13px;
+      line-height: 16px;
+    }
+    h2{
+      font-weight: 500;
+      dont-size:16px;
+      line-height: 1em;
+    }
+ 
+
+  
+  }

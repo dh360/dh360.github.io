@@ -1,6 +1,8 @@
 function preview(){
+    $(".publish").css({"display":"block"});
     var title = localStorage.getItem('title');//title value
     var html = localStorage.getItem('html');
+    $('#coverphoto').attr("src",);
 if(title !== null ){
     var titleNode = document.createElement('h1');//title node
     var titleTextNode = document.createTextNode(title); // title text node
@@ -45,10 +47,16 @@ function download(filename, text) {
     }
 }
 $('.publish').click(function () {
-   $(".publish").css("display:none");
+  
+   $(".container").remove(".publish");
+   console.log("111");
     var htmlString  = $(":root").html();
-    download('LittleEditor.html', htmlString);
+    var FinalhtmlString = htmlString.replace('<div class="publish" style="display: block;">保存网页</div>','');
+    download('LittleEditors.html', FinalhtmlString);
 })
+
+
+
 }
 
 // 标题

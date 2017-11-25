@@ -5,6 +5,20 @@ html {
     border-color: #CCCCCC;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
 }
+.deleteImg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    width: 32px;
+    height: 32px;
+    /* pointer-events:none; */
+  
+    background-color:#F4F4F4;
+   border-radius: 3px;
+    display: none;
+}
 
 .ql-blank-font {
     color: red;
@@ -82,7 +96,7 @@ input.fileInput{
     margin-top: 108px;
     width: 660px;
     height: 190px;
-    background-color: red;
+    /* background-color: red; */
     cursor: pointer;
     opacity: 0;
     /* display: none; */
@@ -94,7 +108,7 @@ input.fileInput{
     margin: 0 auto;
     margin-top: 108px;
     width: 660px;
-    height: 190px;
+    height: auto;
     background-color: #F7F8F9;
     cursor: pointer;
     z-index:0;
@@ -103,9 +117,10 @@ input.fileInput{
     
 }
 #preview{
+    display:block;
     max-width: 660px;
-   height: auto;
-
+    height: auto;
+     margin:0 auto;
     /* display: block;
      position: relative; */
     /* margin: 0 auto; */ 
@@ -122,11 +137,13 @@ input.fileInput{
 
 }
 .contain {
-    position: relative;
+    clear:both;
     width: 660px;
     margin: 0 auto;
 }
 #contain {
+ /* position: relative; */
+ clear:both;
     width: 660px;
     margin-top: 47px;
     margin: 0 auto;
@@ -286,7 +303,7 @@ input:-ms-input-placeholder {
 }
 .view {
     display: inline-block;
-    width: 50px;
+    width: 90px;
     height: 30px;
     color: #808080;
     position: absolute;
@@ -298,9 +315,22 @@ input:-ms-input-placeholder {
     font-size: 16px;
     cursor: pointer;
 }
+.phoneView{
+    display: inline-block;
+    width:32px;
+    height:32px;
+    padding-right: 8px;
+    border-right:1px solid #F8F8F8;
+}
+.computerView{
+    display: inline-block;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
 .publish {
     display: inline-block;
-    width: 50px;
+    width: 100px;
     height: 30px;
     position: absolute;
     right: 100px;
@@ -337,12 +367,34 @@ img {
     padding: 0;
 }
 .ql-editor img {
-    width: 560px;
-    height: 280px;
+    /* width: 660px;
+    height: 280px; */
     min-height: 30px;
     min-width: 60px;
 }
+.wrap{
+    
+}
+.reUpImg{
+    width:32px;
+    height:32px;
+    display: block;
+    margin: 0 auto;
+}
+.ql-editor::-webkit-scrollbar {
+    width: 10px;
+}
 
+.ql-editor::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    height: 6px;
+    background: #626262;
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+.ql-editor::-webkit-scrollbar {
+    height: 6px;
+}
 /* <div class="toolbar">
 <select  name="样式" id="select">
         <option  selected class="bigText" value="大标题">大标题</option>

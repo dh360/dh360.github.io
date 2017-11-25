@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LittleEditor</title>
+    <link rel="stylesheet" href="./common.css">
+    <script src="./common.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.js"></script>
+    <script src="./image.js"></script>
+    <script src="https://cdn.bootcss.com/plupload/3.1.1/plupload.full.min.js"></script>
+    <script src="./qiniu.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link href="./quill.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
+    <script src="./util.js"></script>
+    <!-- <script src="./autoSave.js"></script> -->
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-title">
+                <div class="titleDiv">
+                    <div class="pageTitle">写文章</div>
+                    <div class="pageSubTitle"></div>
+                </div>
+            </div>
+            <div class="view">
+                    <img  class="phoneView"  src="./img/iPhoneX.png" alt="手机预览"  title="手机预览">
+                    <img class="computerView" src="./img/computer.png" alt="电脑预览" title="电脑预览">
+          
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="pagephoto">
+                <input class="fileInput " style="" type="file" accept=".jpeg, .jpg, .png" onchange='imgPreview(this)'></input>
+                <img id="preview"   src="" alt="">
+                <img class="camera" id="camera" src="./img/photo.png" alt="">
+                <span class="phototitle">添加题图</span>
+                <span class="deleteImg">
+                    <img  class="reUpImg" src="./img/reUpImg.png" alt="重新上传">
+                </span>
+
+            </div>
+
+            <br />
+
+            <div id="contain">
+                <input class="inputBox" type="text" value='' placeholder="请输入标题" minlength="1" maxlength="32">
+                <div id="toolbarContainer">
+                    <div id="toolbar">
+                        <select class="ql-header">
+                            <option selected>正文</option>
+                            <option value="2">小标题</option>
+                            <option value="1">大标题</option>
+                        </select>
+                        <embed class="undo" title="撤销" src="./img/undo.png" alt="撤销">
+                        <embed class="redo" title="重做" src="./img/redo.png" alt="重做">
+                        <button class="ql-image" title="添加图片"></button>
+
+                        <button type="button" class="ql-link">
+                            <svg viewBox="0 0 18 18">
+                                <line class="ql-stroke" x1="7" x2="11" y1="7" y2="11"></line>
+                                <path class="ql-even ql-stroke" title="sd sa" d="M8.9,4.577a3.476,3.476,0,0,1,.36,4.679A3.476,3.476,0,0,1,4.577,8.9C3.185,7.5,2.035,6.4,4.217,4.217S7.5,3.185,8.9,4.577Z">222</path>
+                                <path class="ql-even ql-stroke" d="M13.423,9.1a3.476,3.476,0,0,0-4.679-.36,3.476,3.476,0,0,0,.36,4.679c1.392,1.392,2.5,2.542,4.679.36S14.815,10.5,13.423,9.1Z">333</path>
+                            </svg>
+                        </button>
+                        <button type="button" class="ql-code-block">
+                            <svg viewBox="0 0 18 18">
+                                <polyline class="ql-even ql-stroke" points="5 7 3 9 5 11"></polyline>
+                                <polyline class="ql-even ql-stroke" points="13 7 15 9 13 11"></polyline>
+                                <line class="ql-stroke" x1="10" x2="8" y1="5" y2="13"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="editor" tabindex="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<style>
+    /* .preview {
+        width: 660px;
+        height: 190px;
+        z-index: 10000;
+    } */
+</style>
+<script>
+    function imgPreview(fileDom) {
+        console.log("阿牛被点击");
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var readerfile = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+        //获取文件
+        var file = fileDom.files[0];
+        console.log();
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+        readerfile.onload = function (e) {
+            
+            console.log("1111");
+            console.log(e);
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            console.log("2222");
+            img.src = e.target.result;
+            console.log(img.src);
+            console.log('---------------------');
+            console.log(e.target.width);
+            $('.pagephoto').css({"background-color":"#ffffff"});
+            $('.fileInput').css({
+                'display': 'none',
+                'width': '0px',
+                'height': '0px'
+            });
+            $('.camera').css({
+                'display': 'none',
+                'width': '0px',
+                'height': '0px'
+            });
+            $('.phototitle').css({
+                'display': 'none'
+            });
+
+
+             document.getElementById('preview').setAttribute('src', img.src);
+            //  window.location.reload();
+          
+           
+        };
+
+        readerfile.readAsDataURL(file);
+        //     convertImgToBase64(img.src, function (base64Img) {
+        //         console.log(url);
+        //     // Base64DataURL
+        // });
+
+
+    }
+    // class HeaderBlot extends Block { }
+    // HeaderBlot.blotName = 'header';
+    // HeaderBlot.tagName = ['h1', 'h2'];
+    // Quill.register(HeaderBlot);
+
+    // let quill = new Quill('#editor-container');
+    // $('#header-1-button').click(function() {
+    //   quill.format('header', 1);
+    // });
+    // $('#header-2-button').click(function() {
+    //   quill.format('header', 2);
+    // });
+
+
+    // let BlockEmbed = Quill.import('blots/block/embed');
+    $(document).ready(function () {
+        console.log('ready');
+        var quill = new Quill('#editor', {
+            modules: {
+
+                'toolbar': ' #toolbar'
+            },
+            placeholder: '请输入正文',
+            theme: 'snow'
+        });
+        view(quill);
+    })
+
+
+    // AK:
+    // _CghcYndvysaLVqfLaDKc80StCcwOWlxXS4MwAB2
+    // SK:
+    // X3DSDndHKOMzmms3dh886XwzTiC9t3pHWpkHav0b
+
+    // class ImageBlot extends BlockEmbed {
+    //     static create(value) {
+    //       let node = super.create();
+    //       node.setAttribute('alt', value.alt);
+    //       node.setAttribute('src', value.url);
+    //       return node;
+    //     }
+
+    //     static value(node) {
+    //       return {
+    //         alt: node.getAttribute('alt'),
+    //         url: node.getAttribute('src')
+    //       };
+    //     }
+    //   }
+    //   ImageBlot.blotName = 'image';
+    //   ImageBlot.tagName = 'img';
+    //   Quill.register(ImageBlot);
+    // $('.ql-image').click(function() {
+    //     let range = quill.getSelection(true);
+
+    //     quill.insertText(range.index, '\n', Quill.sources.USER);
+    //     quill.insertEmbed(range.index + 1, 'image', {
+    //       alt: 'Quill Cloud',
+    //       url: 'https://quilljs.com/0.20/assets/images/cloud.png'
+    //     }, Quill.sources.USER);
+    //     console.log("sff");
+    //     quill.setSelection(range.index + 2, Quill.sources.SILENT);
+    //   });
+
+    // var toolbarOptions = [
+    //   [{ 'header': [1, 2, false] }],//标题
+    //   ['image'],
+    // ];
+    // var quill = new Quill('#editor', {
+    //     modules: {
+    //         toolbar: toolbarOptions
+    //     },
+    //     theme:'snow',
+    //     history:{
+    //         delay:2000,
+    //         nextStack:500,
+    //         userOnly:true
+    //     }
+    //   });
+</script>
+
+</html>

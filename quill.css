@@ -8,7 +8,7 @@
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   height: 100%;
   margin: 0px;
   position: relative;
@@ -41,7 +41,7 @@
   height: 100%;
   outline: none;
   overflow-y: auto;
-  padding: 12px 15px;
+  /* padding: 12px 15px; */
   tab-size: 4;
   -moz-tab-size: 4;
   text-align: left;
@@ -53,7 +53,7 @@
   cursor: text;
 }
 
-.ql-editor p,
+
 .ql-editor ol,
 .ql-editor ul,
 .ql-editor pre,
@@ -68,7 +68,14 @@
   padding: 0;
   counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
 }
-
+.ql-editor p{
+  margin: 20px 0 20px 0;
+  text-indent: 2em; 
+}
+.ql-editor p img{
+  display: block;
+  text-indent: 0; 
+}
 .ql-editor ol,
 .ql-editor ul {
   padding-left: 1.5em;
@@ -733,11 +740,13 @@
 }
 
 .ql-snow .ql-editor h1 {
-  font-size: 2em;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 .ql-snow .ql-editor h2 {
-  font-size: 1.5em;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .ql-snow .ql-editor h3 {
@@ -807,7 +816,12 @@ pre.ql-syntax::-webkit-scrollbar {
 }
 
 .ql-snow .ql-editor img {
-  max-width: 100%;
+  width:auto;
+  height:auto;
+  max-width:660px;
+  overflow-x: hidden;
+  margin:0 auto;
+  /* max-width: 100%; */
 }
 
 .ql-snow .ql-picker {
@@ -1109,7 +1123,7 @@ pre.ql-syntax::-webkit-scrollbar {
 }
 
 .ql-snow .ql-tooltip::before {
-  content: "Visit URL:";
+  content: "访问:";
   line-height: 26px;
   margin-right: 8px;
 }
@@ -1134,13 +1148,13 @@ pre.ql-syntax::-webkit-scrollbar {
 
 .ql-snow .ql-tooltip a.ql-action::after {
   border-right: 1px solid #ccc;
-  content: 'Edit';
+  content: '编辑';
   margin-left: 16px;
   padding-right: 8px;
 }
 
 .ql-snow .ql-tooltip a.ql-remove::before {
-  content: 'Remove';
+  content: '删除';
   margin-left: 8px;
 }
 
@@ -1159,12 +1173,12 @@ pre.ql-syntax::-webkit-scrollbar {
 
 .ql-snow .ql-tooltip.ql-editing a.ql-action::after {
   border-right: 0px;
-  content: 'Save';
+  content: '保存';
   padding-right: 0px;
 }
 
 .ql-snow .ql-tooltip[data-mode=link]::before {
-  content: "Enter link:";
+  content: "输入链接:";
 }
 
 .ql-snow .ql-tooltip[data-mode=formula]::before {
