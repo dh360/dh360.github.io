@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+        <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=0, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>LittleEditor</title>
     <link rel="stylesheet" href="./common.css">
     <script src="./common.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.js"></script>
@@ -28,8 +29,11 @@
                     <div class="pageSubTitle"></div>
                 </div>
             </div>
-            <div class="view">预览</div>
-
+            <div class="view">
+                    <img  class="phoneView"  src="./img/iPhoneX.png" alt="手机预览"  title="手机预览">
+                    <img class="computerView" src="./img/computer.png" alt="电脑预览" title="电脑预览">
+          
+            </div>
         </div>
         <div class="wrap">
             <div class="pagephoto">
@@ -37,6 +41,10 @@
                 <img id="preview"   src="" alt="">
                 <img class="camera" id="camera" src="./img/photo.png" alt="">
                 <span class="phototitle">添加题图</span>
+                <span class="deleteImg">
+                    <img  class="reUpImg" src="./img/reUpImg.png" alt="重新上传">
+                </span>
+
             </div>
 
             <br />
@@ -115,14 +123,26 @@
             img.src = e.target.result;
             console.log(img.src);
             console.log('---------------------');
-            console.log(e.target.width)
-             $('.pagephoto').css('background-color:red');
+            console.log(e.target.width);
+            $('.pagephoto').css({"background-color":"#ffffff"});
+            $('.fileInput').css({
+                'display': 'none',
+                'width': '0px',
+                'height': '0px'
+            });
+            $('.camera').css({
+                'display': 'none',
+                'width': '0px',
+                'height': '0px'
+            });
+            $('.phototitle').css({
+                'display': 'none'
+            });
 
-            $('.pagephoto').html("");
-            
-            var imgString = '<img  id="preview" src=' + img.src + '>';
-        
-            $('.pagephoto').append(imgString);
+
+             document.getElementById('preview').setAttribute('src', img.src);
+            //  window.location.reload();
+          
            
         };
 
