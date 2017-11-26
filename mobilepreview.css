@@ -43,8 +43,11 @@
       overflow: hidden;
       font-size: .85rem;
       line-height: 1.05rem;
-      background: #eee;
+      background: #FFF;
       overflow-y: scroll;
+    }
+    .ql-syntax{
+      background-color:#F6F6F6; 
     }
   
     .device iframe {
