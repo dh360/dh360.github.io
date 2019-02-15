@@ -1,10 +1,10 @@
+
 # LittleEditor
-littleEditor  是一个简单的所见即所得的编辑器。  [demo及使用说明](http://www.jianshu.com)
+littleEditor  是一个简单的所见即所得的编辑器。  [demo及使用说明](https://dinghao1994.github.io/demo)
 
+相比现在比较流行的Markdown，littleEditor不用记任何语法和规则，所见即所得。使文章编辑者能够专注于文章内容。
 
- 相比现在比较流行的Markdown，littleEditor不用记任何语法和规则，所见即所得。使文章编辑者能够专注于文章内容。
 ## 功能列表：
-    
 1. #### 插入代码块
 2. #### 插入图片
 3. #### 两级标题
@@ -16,3 +16,7 @@ littleEditor  是一个简单的所见即所得的编辑器。  [demo及使用�
 8.  #### 自动恢复上一次的编辑成果
     
       所编辑的文章每隔十秒钟便会自动保存到本地，以免呕心沥血码的字烟消云散。退出时不必刻意保存，当下次登录时，```littleEditor``` 自动恢复上一次所编辑的内容。 
+
+
+
+### [现在去写文章](https://dinghao1994.github.io)
